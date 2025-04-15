@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Art World | Moamen Elmetwaly Erfan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background: #f5f5f5;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+    header {
+      padding: 2rem;
+      background: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      font-size: 2rem;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+    h1, h2 {
+      font-weight: 700;
+    }
+    h2 {
+      margin: 2rem 0 1rem;
+      font-size: 1.8rem;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .project {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .project:hover {
+      transform: translateY(-5px);
+    }
+    .project img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #eee;
+      font-size: 0.9rem;
+    }
+    nav {
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header>
+    <h1>Art World</h1>
+    <div>by Moamen Elmetwaly Erfan</div>
+  </header>
+
+  <div class="container">
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I’m Moamen Elmetwaly Erfan, a Dubai-based graphic designer and art director with a passion for creating bold, innovative designs that tell stories and connect with people. My work spans branding, advertising, and digital design, bringing a modern and strategic approach to every project.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-grid" id="project-list"></div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Feel free to reach out for collaboration or just to say hello.</p>
+      <p>Email: <a href="mailto:moamenerfan95@gmail.com">moamenerfan95@gmail.com</a></p>
+      <p>Based in: Dubai</p>
+      <p>Behance: <a href="https://www.behance.net/moamenerfan" target="_blank">https://www.behance.net/moamenerfan</a></p>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 Art World | Moamen Elmetwaly Erfan. All rights reserved.
+  </footer>
+
+  <script>
+    const projects = [
+      {
+        title: "Brand Identity for Tech Startup",
+        image: "https://mir-s3-cdn-cf.behance.net/project_modules/disp/93cb9e180691891.6555c1a91f31e.jpg",
+        link: "https://www.behance.net/gallery/180691891/Tech-Startup-Branding"
+      },
+      {
+        title: "Event Campaign Poster",
+        image: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/436cab180690117.6555ba17053f2.jpg",
+        link: "https://www.behance.net/gallery/180690117/Event-Campaign-Poster"
+      },
+      {
+        title: "Creative Social Media Designs",
+        image: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/509a4c180688873.6555b05f42496.jpg",
+        link: "https://www.behance.net/gallery/180688873/Social-Media-Designs"
+      }
+    ];
+
+    const container = document.getElementById('project-list');
+    projects.forEach(project => {
+      const div = document.createElement('div');
+      div.className = 'project';
+      div.innerHTML = `
+        <a href="${project.link}" target="_blank">
+          <img src="${project.image}" alt="${project.title}" />
+          <h3>${project.title}</h3>
+        </a>
+      `;
+      container.appendChild(div);
+    });
+  </script>
+</body>
+</html>
